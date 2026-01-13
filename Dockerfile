@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17-jdk
-VOLUME /tmp
-COPY target/*.jar NaturalMarket-0.0.1-SNAPSHOT.jar
+WORKDIR /app
+COPY target/NaturalMarket-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/NaturalMarket-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
